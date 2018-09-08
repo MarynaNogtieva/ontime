@@ -34,7 +34,6 @@ RSpec.describe AttendancesController, type: :controller do
     end
 
     it 'saves new attendance reccord to DB' do
-      byebug
       expect do
         post :create,
              params: {
@@ -52,11 +51,16 @@ RSpec.describe AttendancesController, type: :controller do
     end
   end
 
-  # describe 'GET#show' do
-  #   before { get :show, params: { id: attendance } }
+  describe 'GET#attendances_per_employee' do
+    let(:attendance_list) { create_list(:attendance, 3, user: user) }
+    before { get :attendances_per_employee, params: { user_id: user } }
 
-  #   it 'assigns the requested attendance' do
-  #     expect(assigns(:question)).to eq question
-  #   end
-  # end
+    it 'assigns the requested attendance' do
+      expect(assigns(:user_attendances)).to eq attendance_list
+    end
+
+    it 'renders show view' do
+      expect(response).to render_template :attendances_per_employee
+    end
+  end
 end
