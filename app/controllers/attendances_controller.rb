@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'byebug'
 
 class AttendancesController < ApplicationController
   def index
@@ -6,6 +7,7 @@ class AttendancesController < ApplicationController
   end
 
   def create
+    byebug
     @attendance = Attendance.new(attendance_params)
     if @attendance.save
       render :show
@@ -29,8 +31,8 @@ class AttendancesController < ApplicationController
     params.require(:attendance).permit(
       :first_name,
       :last_name,
-      :checked_in_at,
-      :checked_out_at,
+      :clock_in_at,
+      :clock_out_at,
       :user_id
     )
   end
