@@ -1,0 +1,11 @@
+ <tbody>
+    <% attendances.each do |attendance| %>
+      <tr id="time-entry-<%= attendance.id %>">
+        <td><%= full_name(attendance) %></td>
+        <td><%= attendance.clock_in_at&.strftime('%Y-%m-%d %H:%M') %></td>
+        <td><%= attendance.clock_out_at&.strftime('%Y-%m-%d %H:%M') %></td>
+        <td><%= link_to 'Edit', edit_attendance_path(attendance) %></td>
+        <td><%= link_to 'Delete', attendance_path(attendance), method: :delete, data: { confirm: 'Are you sure you want to delete this record?' }, remote: true %></td>
+      </tr>
+    <% end %>
+  </tbody>

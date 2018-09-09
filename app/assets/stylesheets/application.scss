@@ -1,0 +1,67 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+ @import 'bootstrap';
+ @import 'font-awesome';
+
+ .custom-nav {
+  height: 48px;
+  background-color: #34b9c6;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+  -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+  box-shadow: 0 1px 4px rgba(0,0,0,.065);
+
+  ul.nav.navbar-nav.navbar-right{
+    justify-content: flex-end;
+  }
+ }
+
+ .nav.navbar-nav.navbar-right li a {
+  color: #fff;
+  height: 48px;
+  &:hover,
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #108790;
+    -webkit-box-shadow: inset 0 3px 8px rgba(0,0,0,.125);
+    -moz-box-shadow: inset 0 3px 8px rgba(0,0,0,.125);
+    box-shadow: inset 0 3px 8px rgba(0,0,0,.125);
+  }
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.green-theme {
+  color: #108790;
+}
+
+.f-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60%;
+  padding: 30px;
+  border: 1px solid #e3e3e3;
+  border-radius: 0;
+  -webkit-box-shadow: 0 2px 17px 11px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 17px 11px rgba(0,0,0,0.04);
+  margin-top: 90px;
+}
