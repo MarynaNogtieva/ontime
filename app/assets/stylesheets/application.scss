@@ -13,3 +13,17 @@
 
  */
  @import 'bootstrap';
+
+ .custom-nav {
+  background-color: #34b9c6;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+  -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+  box-shadow: 0 1px 4px rgba(0,0,0,.065);
+ }
+
+ .nav.navbar-nav.navbar-right li a {
+  color: #fff;
+}
