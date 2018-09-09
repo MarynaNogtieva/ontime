@@ -1,0 +1,9 @@
+<%if f.object.allow_clock_out? %>
+      <%= f.input :clock_out_at, as: :datetime,
+                                html5: true,
+                                input_html: {
+                                  class: 'form-control datepicker',
+                                  value: nil
+                                  }
+                                %>
+<% end %>

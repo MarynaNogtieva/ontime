@@ -1,0 +1,19 @@
+ <%= simple_form_for(@attendance, html: { id: 'attendance_form' }) do |f| %>
+    <%= f.input :first_name, as: :string,
+                            placeholder: 'First Name',
+                            input_html: { class: 'form-control '}
+                             %>
+    <%= f.input :last_name, as: :string,
+                            placeholder: 'Last Name',
+                            input_html: { class: 'form-control '}
+                            %>
+    <%= render 'attendances/fieldsets/clock_in', f: f %>
+    <%= render 'attendances/fieldsets/clock_out', f: f %>
+    <%= f.hidden_field :user_id, value: current_user.id%>
+    <%= f.submit value: 'Submit',
+                 input_html: {
+                    class: 'btn btn-primary'
+                  }
+                %>
+
+  <% end %>
