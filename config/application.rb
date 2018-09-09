@@ -29,5 +29,7 @@ module Ontime
                        controller_spec: true
       g.fixture_replacement :factory_bot, dir: 'spec/factories'
     end
+
+    config.secret_key = '6dad7be40bd8c5433123e22a1cb26bee721a62c231dd098ea2592a7b3dddafe752d54d27f3b625e58192c70d210de76d99b501ffb2c3f091e05f4e1cabd1e866'
   end
 end
