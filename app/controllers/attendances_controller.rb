@@ -15,7 +15,11 @@ class AttendancesController < ApplicationController
 
   def create
     @attendance = Attendance.new(attendance_params)
-    respond_with(@attendance.save, location: employee_attendances_path(user_id: @attendance.user.id) )
+    if @attendance.save
+      redirect_to employee_attendances_path(user_id: @attendance.user.id)
+    else
+      render :new
+    end
   end
 
   def new

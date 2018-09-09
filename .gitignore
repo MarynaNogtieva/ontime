@@ -51,7 +51,7 @@ certs/
 .zeus.sock
 
 # Ignore secrets
-/config/secrets.yml
+#/config/secrets.yml
 
 
 
