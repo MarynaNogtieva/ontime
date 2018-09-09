@@ -76,5 +76,14 @@ RSpec.describe AttendancesController, type: :controller do
       expect(response).to render_template :edit
     end
   end
+
+  describe 'DELETE #destroy' do
+    sign_in_user
+    before { attendance }
+
+    it 'deletes question' do
+      expect { delete :destroy, params: { id: attendance, format: :js } }.to change(Attendance, :count).by(-1)
+    end
+  end
 end
 

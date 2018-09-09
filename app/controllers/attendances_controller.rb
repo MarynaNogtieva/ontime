@@ -1,9 +1,8 @@
 # frozen_string_literal: true
-require 'byebug'
 
 class AttendancesController < ApplicationController
   before_action :load_user, only: %i[attendances_per_employee]
-  before_action :load_attendance, only: %i[edit update]
+  before_action :load_attendance, only: %i[edit update destroy]
 
   def index
     @attendances = Attendance.all
@@ -25,12 +24,18 @@ class AttendancesController < ApplicationController
   def edit; end
 
   def update
-    byebug
     if @attendance.update(attendance_params)
       redirect_to attendances_path
     else
       render :edit
     end
+  end
+
+  def destroy
+    @user = @attendance.user
+    @attendance.destroy
+
+    redirect_to employee_attendances_path(user_id: @user.id), format: 'js'
   end
 
   def attendances_per_employee

@@ -9,6 +9,6 @@ class Attendance < ApplicationRecord
   end
 
   def allow_clock_out?
-    clock_in_at.present? && clock_out_at.blank?
+    clock_in_at.present?
   end
 end
