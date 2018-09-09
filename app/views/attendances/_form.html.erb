@@ -10,7 +10,7 @@
     <%= render 'attendances/fieldsets/clock_in', f: f %>
     <%= render 'attendances/fieldsets/clock_out', f: f %>
     <%= f.hidden_field :user_id, value: current_user.id%>
-    <%= f.submit value: 'Submit',
+    <%= f.submit nil,
                  input_html: {
                     class: 'btn btn-primary'
                   }

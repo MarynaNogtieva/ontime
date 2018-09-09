@@ -7,6 +7,7 @@ RSpec.describe AttendancesController, type: :controller do
   let(:attendance) { create(:attendance, user: user) }
 
   describe 'GET#index' do
+    sign_in_user
     let(:attendance_list) { create_list(:attendance, 3, user: user) }
 
     before { get :index }
@@ -44,6 +45,7 @@ RSpec.describe AttendancesController, type: :controller do
   end
 
   describe 'GET#new' do
+    sign_in_user
     before { get :new }
 
     it 'assigns a new attendance' do
@@ -52,6 +54,7 @@ RSpec.describe AttendancesController, type: :controller do
   end
 
   describe 'GET#attendances_per_employee' do
+    sign_in_user
     let(:attendance_list) { create_list(:attendance, 3, user: user) }
     before { get :attendances_per_employee, params: { user_id: user } }
 

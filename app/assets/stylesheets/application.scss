@@ -15,6 +15,7 @@
  @import 'bootstrap';
 
  .custom-nav {
+  height: 48px;
   background-color: #34b9c6;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -22,8 +23,22 @@
   -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
   -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
   box-shadow: 0 1px 4px rgba(0,0,0,.065);
+
+  ul.nav.navbar-nav.navbar-right{
+    justify-content: flex-end;
+  }
  }
 
  .nav.navbar-nav.navbar-right li a {
   color: #fff;
+  height: 48px;
+  &:hover,
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #108790;
+    -webkit-box-shadow: inset 0 3px 8px rgba(0,0,0,.125);
+    -moz-box-shadow: inset 0 3px 8px rgba(0,0,0,.125);
+    box-shadow: inset 0 3px 8px rgba(0,0,0,.125);
+  }
 }
