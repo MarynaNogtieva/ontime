@@ -13,6 +13,7 @@
 
  */
  @import 'bootstrap';
+ @import 'font-awesome';
 
  .custom-nav {
   height: 48px;
@@ -41,4 +42,26 @@
     -moz-box-shadow: inset 0 3px 8px rgba(0,0,0,.125);
     box-shadow: inset 0 3px 8px rgba(0,0,0,.125);
   }
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.green-theme {
+  color: #108790;
+}
+
+.f-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60%;
+  padding: 30px;
+  border: 1px solid #e3e3e3;
+  border-radius: 0;
+  -webkit-box-shadow: 0 2px 17px 11px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 17px 11px rgba(0,0,0,0.04);
+  margin-top: 90px;
 }

@@ -1,1 +1,14 @@
-<h1>Track your time</h1>
+<div class='container f-wrapper'>
+  <div>
+    <h1>Track your time and stay organized</h1>
+    <p>TimeTracker helps manage your team more efficiently. Stay organized and don't forget to log your time!</p>
+    <% if user_signed_in? %>
+      <i class="fa fa-sign-in green-theme" aria-hidden="true">
+        <%= link_to 'Clock In', new_attendance_path(user_id: current_user.id) %>
+      </i>
+    <% end %>
+  </div>
+  <div>
+    <i class='fa fa-clock-o fa-10x green-theme'></i>
+  </div>
+</div>
