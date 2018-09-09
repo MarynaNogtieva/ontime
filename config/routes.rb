@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  resources :attendances, only: %i[index show create new] do
+  resources :attendances do
     get :attendances_per_employee, on: :collection
   end
+
   get 'employee_attendances/:user_id', to: 'attendances#attendances_per_employee', as: 'employee_attendances'
 end

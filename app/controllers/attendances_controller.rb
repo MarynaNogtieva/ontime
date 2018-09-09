@@ -2,15 +2,17 @@
 require 'byebug'
 
 class AttendancesController < ApplicationController
+  before_action :load_user, only: %i[attendances_per_employee]
+  before_action :load_attendance, only: %i[edit update]
+
   def index
     @attendances = Attendance.all
   end
 
   def create
-    byebug
     @attendance = Attendance.new(attendance_params)
     if @attendance.save
-      render :show
+      redirect_to employee_attendances_path(user_id: @attendance.user.id)
     else
       render :new
     end
@@ -20,8 +22,18 @@ class AttendancesController < ApplicationController
     @attendance = Attendance.new
   end
 
+  def edit; end
+
+  def update
+    byebug
+    if @attendance.update(attendance_params)
+      redirect_to attendances_path
+    else
+      render :edit
+    end
+  end
+
   def attendances_per_employee
-    @user = User.find(params[:user_id])
     @user_attendances = @user.attendances
   end
 
@@ -35,5 +47,13 @@ class AttendancesController < ApplicationController
       :clock_out_at,
       :user_id
     )
+  end
+
+  def load_attendance
+    @attendance = Attendance.find(params[:id])
+  end
+
+  def load_user
+    @user = User.find(params[:user_id])
   end
 end

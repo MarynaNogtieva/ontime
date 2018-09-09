@@ -5,7 +5,7 @@ class Attendance < ApplicationRecord
   validates :first_name, :last_name, presence: true
 
   def allow_clock_in?
-    clock_in_at.blank? && clock_out_at.blank?
+    clock_in_at.blank? && clock_out_at.blank? || clock_in_at.present?
   end
 
   def allow_clock_out?

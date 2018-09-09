@@ -3,7 +3,7 @@
                                 html5: true,
                                 input_html: {
                                   class: 'form-control datepicker',
-                                  value: DateTime.now.strftime('%Y-%m-%dT%H:%M')
+                                  value: f.object.clock_in_at&.strftime('%Y-%m-%dT%H:%M') || DateTime.now.strftime('%Y-%m-%dT%H:%M')
                                   }
                                 %>
     <% end %>

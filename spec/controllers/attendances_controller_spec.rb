@@ -63,4 +63,18 @@ RSpec.describe AttendancesController, type: :controller do
       expect(response).to render_template :attendances_per_employee
     end
   end
+
+  describe 'GET #edit' do
+    sign_in_user
+    before { get :edit, params: { id: attendance.id } }
+
+    it 'assigns the requested attendance to @attendance' do
+      expect(assigns(:attendance)).to eq attendance
+    end
+
+    it 'render new edit' do
+      expect(response).to render_template :edit
+    end
+  end
 end
+

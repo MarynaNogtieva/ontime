@@ -1,0 +1,12 @@
+ <tbody>
+    <% attendances.each do |attendance| %>
+      <tr>
+        <td><%= full_name(attendance) %></td>
+        <td><%= attendance.clock_in_at&.strftime('%Y-%m-%d %H:%M') %></td>
+        <td><%= attendance.clock_out_at&.strftime('%Y-%m-%d %H:%M') %></td>
+        <td><%#= link_to t('common.show'), admin_ticket_path(ticket) %></td>
+        <td><%#= link_to t('common.edit'), edit_admin_ticket_path(ticket) %></td>
+        <td><%#= link_to t('common.destroy'), [:admin, ticket], method: :delete, data: { confirm: t('common.confirm') } %></td>
+      </tr>
+    <% end %>
+  </tbody>
