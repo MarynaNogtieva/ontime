@@ -50,8 +50,7 @@ certs/
 /config/application.yml
 .zeus.sock
 
-# Ignore secrets
-/config/secrets.yml
+
 
 
 
